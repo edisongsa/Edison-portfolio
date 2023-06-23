@@ -6,7 +6,7 @@ Welcome to the **Edison-portfolio** repository! This project serves as a collect
 
 To explore the Edison-portfolio and review my data analytics projects, follow these steps:
 
-1. Visit the portfolio website: [Edison-portfolio]([https://edisongsa.github.io/Edison-portfolio/])
+1. Visit the portfolio website: [Edison-portfolio](https://edisongsa.github.io/Edison-portfolio/)
 
 2. Browse through the different sections and projects to gain an understanding of my skills, methodologies, and achievements.
 
@@ -28,4 +28,4 @@ However, if you are interested in collaborating or have any suggestions or feedb
 
 ---
 
-Thanks
+Thank you for taking the time to review my Edison-portfolio. I hope this collection of data analytics projects effectively demonstrates my skills and expertise. If you have any further inquiries or require additional information, please do not hesitate to reach out to me.
