@@ -31,10 +31,7 @@ website. I am open to discussions and potential collaborations in the data analy
 
 Thank you for taking the time to review my Edison-portfolio. I hope this collection of data analytics projects effectively demonstrates my skills and expertise. If you have any further inquiries or require additional information, please do not hesitate to reach out to me.
 
-
-#PROJECT 1
-#Impact of El Niño Events on Wildfires: A Data Analysis Study
-
+Impact of El Niño Events on Wildfires: A Data Analysis Study
 Introduction
 The objective of this project is to analyze the impact of El Niño events on the occurrence and severity of wildfires. El Niño is a climate phenomenon characterized by warming of the ocean surface temperatures in the central and eastern tropical Pacific. It is known to influence weather patterns worldwide, potentially affecting wildfire conditions. By analyzing historical wildfire data in conjunction with El Niño index data, this study aims to determine if there is a significant increase in the number of wildfires during El Niño years.
 
@@ -43,13 +40,12 @@ Two datasets will be used for this analysis:
 
 Wildfire Data: The dataset contains information on the number of fires and acres burned from 1983 to 2022. It includes variables such as the year, number of fires, and acres burned.
 El Niño Index Data: The dataset includes information on El Niño events, including the year, start ONI value, starting season, peak ONI value, and peak season. The ONI (Oceanic Niño Index) is a measure of the departure from average sea surface temperatures in the tropical Pacific.
-##Data Analysis
+Data Analysis
 The analysis will involve the following steps:
 
 Data Preprocessing: The wildfire and El Niño index datasets will be loaded into R and prepared for analysis. This includes handling missing values, converting data types, and merging the datasets based on the common year column.
 Statistical Testing: A t-test will be conducted to compare the number of fires during El Niño years and non-El Niño years. The t-test will evaluate whether there is a significant difference in the number of fires between these two groups.
 Interpretation of Results: The t-test results will be analyzed, and conclusions will be drawn based on the significance level (e.g., 0.05). If the p-value is below the significance level, it suggests a significant increase in the number of fires during El Niño events.
-
 Expected Outcome
 The project aims to determine whether there is a statistically significant association between El Niño events and an increase in wildfires. The findings will contribute to our understanding of the relationship between climate patterns and wildfire occurrences. If a significant association is identified, it may have implications for wildfire management and preparedness during El Niño years.
 
@@ -58,6 +54,11 @@ It is important to acknowledge that this analysis has certain limitations. The s
 
 By conducting this data analysis, we aim to gain insights into the relationship between El Niño events and wildfire occurrences. The results of this study can contribute to scientific understanding and inform strategies for wildfire prevention, preparedness, and response during El Niño years.
 
+No Installation Required
+This project does not require any specific installation. The analysis will be performed using the R programming language, which is widely available and can be executed on various platforms. The code provided in this project can be run on any system with R installed. The datasets used in the analysis will be provided along with the code, ensuring easy replication and execution of the analysis.
+
+Observed Result
+There is no significant difference in the number of fires during El Niño events.
 
 Data used
 Fire data https://www.nifc.gov/fire-information/statistics/wildfires
@@ -65,14 +66,14 @@ El Nino data https://mrcc.purdue.edu/mw_climate/elNino/historical.jsp
 
 Code:
 
-# Load the required libraries
+Load the required libraries
 library(tidyverse)
 
-# Read the dataset of fire occurrences
+Read the dataset of fire occurrences
 fire_data <- read.csv("fire_data.csv", stringsAsFactors = FALSE)
 fire_data$Year <- as.integer(fire_data$Year)
 
-# Create a dataframe for the modified nino_data
+Create a dataframe for the modified nino_data
 nino_data <- data.frame(
   Year = c(1982, 1991, 1997, 2015),
   Start_ONI = c(0.5, 0.6, 0.6, 0.5),
@@ -81,19 +82,19 @@ nino_data <- data.frame(
   Peak_Season = c("OCT-FEB", "DEC-FEB", "OCT-JAN", NA)
 )
 
-# Merge the datasets based on the common year column
+Merge the datasets based on the common year column
 merged_data <- merge(fire_data, nino_data, by = "Year", all.x = TRUE)
 
-# Convert Fires column to numeric
+Convert Fires column to numeric
 merged_data$Fires <- as.numeric(gsub(",", "", merged_data$Fires))
 
-# Create a binary variable indicating missing values in "Start ONI value"
+Create a binary variable indicating missing values in "Start ONI value"
 merged_data$Missing_ONI <- is.na(merged_data$Start_ONI)
 
-# Perform a t-test to compare the number of fires during El Niño and non-El Niño years
+Perform a t-test to compare the number of fires during El Niño and non-El Niño years
 t_test_result <- t.test(Fires ~ Missing_ONI, data = merged_data, na.action = na.omit)
 
-# Display the t-test results
+Display the t-test results
 cat("T-test Results:\n")
 cat("----------------------------\n")
 cat("Null Hypothesis (H0): The number of fires is the same during El Niño and non-El Niño years.\n")
@@ -101,7 +102,7 @@ cat("Alternate Hypothesis (HA): The number of fires is significantly different d
 cat("T-statistic:", t_test_result$statistic, "\n")
 cat("P-value:", t_test_result$p.value, "\n")
 
-# Check if the p-value is less than the significance level (e.g., 0.05) to determine significance
+Check if the p-value is less than the significance level (e.g., 0.05) to determine significance
 if (t_test_result$p.value < 0.05) {
   cat("Conclusion: The number of fires significantly increased during El Niño events.\n")
 } else {
