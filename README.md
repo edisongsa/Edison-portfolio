@@ -58,8 +58,53 @@ It is important to acknowledge that this analysis has certain limitations. The s
 
 By conducting this data analysis, we aim to gain insights into the relationship between El Niño events and wildfire occurrences. The results of this study can contribute to scientific understanding and inform strategies for wildfire prevention, preparedness, and response during El Niño years.
 
+
 Data used
 Fire data https://www.nifc.gov/fire-information/statistics/wildfires
 El Nino data https://mrcc.purdue.edu/mw_climate/elNino/historical.jsp
 
+Code:
+
+# Load the required libraries
+library(tidyverse)
+
+# Read the dataset of fire occurrences
+fire_data <- read.csv("fire_data.csv", stringsAsFactors = FALSE)
+fire_data$Year <- as.integer(fire_data$Year)
+
+# Create a dataframe for the modified nino_data
+nino_data <- data.frame(
+  Year = c(1982, 1991, 1997, 2015),
+  Start_ONI = c(0.5, 0.6, 0.6, 0.5),
+  Starting_Season = c("MAR-MAY", "MAY-JUL", "APR-JUN", "FEB-APR"),
+  Peak_ONI = c(2.1, 1.6, 2.3, NA),
+  Peak_Season = c("OCT-FEB", "DEC-FEB", "OCT-JAN", NA)
+)
+
+# Merge the datasets based on the common year column
+merged_data <- merge(fire_data, nino_data, by = "Year", all.x = TRUE)
+
+# Convert Fires column to numeric
+merged_data$Fires <- as.numeric(gsub(",", "", merged_data$Fires))
+
+# Create a binary variable indicating missing values in "Start ONI value"
+merged_data$Missing_ONI <- is.na(merged_data$Start_ONI)
+
+# Perform a t-test to compare the number of fires during El Niño and non-El Niño years
+t_test_result <- t.test(Fires ~ Missing_ONI, data = merged_data, na.action = na.omit)
+
+# Display the t-test results
+cat("T-test Results:\n")
+cat("----------------------------\n")
+cat("Null Hypothesis (H0): The number of fires is the same during El Niño and non-El Niño years.\n")
+cat("Alternate Hypothesis (HA): The number of fires is significantly different during El Niño and non-El Niño years.\n")
+cat("T-statistic:", t_test_result$statistic, "\n")
+cat("P-value:", t_test_result$p.value, "\n")
+
+# Check if the p-value is less than the significance level (e.g., 0.05) to determine significance
+if (t_test_result$p.value < 0.05) {
+  cat("Conclusion: The number of fires significantly increased during El Niño events.\n")
+} else {
+  cat("Conclusion: There is no significant difference in the number of fires during El Niño events.\n")
+}
 
