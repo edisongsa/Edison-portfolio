@@ -32,8 +32,8 @@ website. I am open to discussions and potential collaborations in the data analy
 Thank you for taking the time to review my Edison-portfolio. I hope this collection of data analytics projects effectively demonstrates my skills and expertise. If you have any further inquiries or require additional information, please do not hesitate to reach out to me.
 
 
-PROJECT 1
-Impact of El Niño Events on Wildfires: A Data Analysis Study
+#PROJECT 1
+#Impact of El Niño Events on Wildfires: A Data Analysis Study
 
 Introduction
 The objective of this project is to analyze the impact of El Niño events on the occurrence and severity of wildfires. El Niño is a climate phenomenon characterized by warming of the ocean surface temperatures in the central and eastern tropical Pacific. It is known to influence weather patterns worldwide, potentially affecting wildfire conditions. By analyzing historical wildfire data in conjunction with El Niño index data, this study aims to determine if there is a significant increase in the number of wildfires during El Niño years.
