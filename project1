@@ -21,4 +21,13 @@ It is important to acknowledge that this analysis has certain limitations. The s
 
 By conducting this data analysis, we aim to gain insights into the relationship between El Niño events and wildfire occurrences. The results of this study can contribute to scientific understanding and inform strategies for wildfire prevention, preparedness, and response during El Niño years.
 
-Please feel free to further customize or expand the project description to align with your specific requirements and goals.
+No Installation Required
+This project does not require any specific installation. The analysis will be performed using the R programming language, which is widely available and can be executed on various platforms. The code provided in this project can be run on any system with R installed. The datasets used in the analysis will be provided along with the code, ensuring easy replication and execution of the analysis.
+
+Observed Result
+Based on the analysis, there was no significant difference in the number of fires during El Niño events.
+
+Conclusion
+The project analyzed the relationship between El Niño events and wildfire occurrences. The findings suggest that El Niño events may not have a significant impact on the number of fires. However, it's important to note that this conclusion is based on the specific datasets and analysis approach used in this study.
+
+Data used Fire data https://www.nifc.gov/fire-information/statistics/wildfires El Nino data https://mrcc.purdue.edu/mw_climate/elNino/historical.jsp
