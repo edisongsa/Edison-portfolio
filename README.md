@@ -31,3 +31,4 @@ website. I am open to discussions and potential collaborations in the data analy
 
 Thank you for taking the time to review my Edison-portfolio. I hope this collection of data analytics projects effectively demonstrates my skills and expertise. If you have any further inquiries or require additional information, please do not hesitate to reach out to me.
 
+project1
