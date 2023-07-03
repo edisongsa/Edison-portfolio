@@ -63,4 +63,9 @@ cat("T-statistic:", t_test_result$statistic, "\n")
 cat("P-value:", t_test_result$p.value, "\n")
 
 # Check if the p-value is less than the significance level (e.g., 0.05) to determine significance
-if (t_test
+if (t_test_result$p.value < 0.05) {
+  cat("Conclusion: The number of fires significantly increased during El Niño events.\n")
+} else {
+  cat("Conclusion: There is no significant difference in the number of fires during El Niño events.\n")
+}
+## Conclusion: There is no significant difference in the number of fires during El Niño events. 
