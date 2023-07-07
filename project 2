@@ -1,0 +1,21 @@
+
+Analysis of the Relationships between Full Moon Dates in the US and the Number of Accidents in Texas in 2022
+Hypothesis:
+The occurrence of a full moon has an effect on the number of accidents in Texas. Specifically, it is hypothesized that the number of accidents will be higher during the days surrounding a full moon compared to other days.
+
+Data Sources:
+Texas Department of Transportation Annual Texas Motor Vehicle Crash Statistics for 2022: This dataset contains information on the number of accidents that occurred in Texas on a daily basis throughout the year 2022.
+Full Moon Dates: You will provide the dates for each full moon in the year 2022.
+Methodology:
+Data Collection: Obtain the dataset from the Texas Department of Transportation that includes the number of accidents in Texas for each day of the year 2022. Collect the full moon dates for the same year.
+Data Preparation: Organize the accident data by date and create a binary variable to indicate whether a specific day is a full moon day or not.
+Statistical Analysis: Utilize the R programming language to analyze the relationship between full moon dates and the number of accidents in Texas. Perform the following steps:
+a. Descriptive Analysis: Calculate the mean, standard deviation, and other summary statistics for the number of accidents on full moon days and non-full moon days.
+b. Hypothesis Testing: Conduct a two-sample t-test to compare the mean number of accidents on full moon days and non-full moon days. The null hypothesis (H0) will assume no significant difference, while the alternative hypothesis (Ha) will assume a significant difference.
+c. Visualization: Create visualizations, such as line graphs or bar charts, to display the number of accidents over time, highlighting the full moon dates.
+Expected Outcome:
+If the number of accidents is significantly higher on full moon days compared to non-full moon days, it would support the hypothesis that the occurrence of a full moon has an effect on the number of accidents in Texas.
+
+Note: To perform the statistical analysis in R, you will need the accident data and the full moon dates. Please provide the data in the required format, and the corresponding R code can be implemented for further analysis.
+
+For the complete analysis and corresponding R code, please refer to the GitHub repository associated with this project.
